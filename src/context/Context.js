@@ -9,8 +9,8 @@ const Context = ({ children }) => {
 
     const products = [...Array(20)]
         .map(() => ({
-            animal: faker.animal.dog(),
             id: faker.datatype.uuid(),
+            animal: faker.animal.dog(),
             name: faker.commerce.productName(),
             price: faker.commerce.price(),
             image: faker.random.image(),
