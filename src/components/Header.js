@@ -17,11 +17,6 @@ const Header = () => {
                 <Navbar.Brand>
                     <Link to={"/"}>Shopping Cart</Link>
                 </Navbar.Brand>
-                <Navbar.Text className={"search"}>
-                    <FormControl style={{width: 500}}
-                                 className={"m-auto"}
-                                 placeholder={"Search an animal"}/>
-                </Navbar.Text>
                 <Nav>
                     <Dropdown alignRight>
                         <Dropdown.Toggle variant={"success"}>
