@@ -23,7 +23,7 @@ const Cart = () => {
                             <ListGroup.Item key={prod.id}>
                                 <Row>
                                     <Col md={2}>
-                                        <Image src={prod.image} alt={prod.name} fluid rounded/>
+                                        <Image src={prod.image_url} alt={prod.name} fluid rounded/>
                                     </Col>
                                     <Col md={2}>
                                         <span>{prod.name}</span>
@@ -46,7 +46,7 @@ const Cart = () => {
                                                 })
                                             }
                                         >
-                                            {[...Array(prod.inStock).keys()].map((x) => (
+                                            {[...Array(prod.in_stock).keys()].map((x) => (
                                                 <option key={x + 1}>{x + 1}</option>
                                             ))}
 

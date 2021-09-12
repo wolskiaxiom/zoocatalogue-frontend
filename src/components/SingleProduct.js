@@ -12,11 +12,11 @@ const SingleProduct = ( {prod} ) => {
     return (
         <div className={"products"}>
             <Card>
-                <Card.Img variant={"top"} src={prod.image} alt={prod.name}/>
+                <Card.Img variant={"top"} src={prod.image_url} alt={prod.name}/>
                 <Card.Body>
                     <Card.Title>{prod.animal}</Card.Title>
                     <Card.Subtitle style={{paddingBottom: 10}}>
-                        <span> {prod.price.split(".")[0]} PLN </span>
+                        <span> {prod.price.toString().split(".")[0]} PLN </span>
                         {prod.fastDelivery ? (
                             <div> Fast Delivery </div>
                         ) : (
@@ -45,8 +45,8 @@ const SingleProduct = ( {prod} ) => {
                                         payload: prod,
                                     })
                                 }}
-                                disabled={!prod.inStock}>
-                                {!prod.inStock ? "Out of Stock" : "Add to cart"}
+                                disabled={!prod.in_stock}>
+                                {!prod.in_stock ? "Out of Stock" : "Add to cart"}
                             </Button>
                         )
                     }

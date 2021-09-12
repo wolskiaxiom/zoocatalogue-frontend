@@ -32,14 +32,14 @@ const Header = () => {
                                         cart.map((prod) => (
                                             <span className={"cartItem"} key={prod.id}>
                                                 <img
-                                                    src={prod.image}
+                                                    src={prod.image_url}
                                                     className={"cartItemImg"}
                                                     alt={prod.name}
                                                 />
 
                                                 <div className={"cartItemDetail"}>
                                                     <span>{prod.name}</span>
-                                                    <span>{prod.price.split(".")[0]}</span>
+                                                    <span>{prod.price.toString().split(".")[0]}</span>
                                                 </div>
                                                 <AiFillDelete
                                                     fontSize={"20px"}
