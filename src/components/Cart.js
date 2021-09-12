@@ -77,6 +77,55 @@ const Cart = () => {
                     Subtotal ({cart.length}) items
                 </span>
                 <span style={{ fontWeight: 700, fontSize: 20}}>Total: {total} PLN</span>
+                <span style={{ fontWeight: 60, fontSize: 17}}>Enter Order Details</span>
+                <>
+                    <Form>
+                        <Row className="mb-3">
+                            <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
+                            </Form.Group>
+
+                            <Form.Group as={Col} controlId="nickname">
+                                <Form.Label>Nickname</Form.Label>
+                                <Form.Control type="text" placeholder="Nickname" />
+                            </Form.Group>
+                        </Row>
+
+                        <Form.Group className="mb-3" controlId="formGridAddress1">
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control placeholder="1234 Main St" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formGridAddress2">
+                            <Form.Label>Address 2</Form.Label>
+                            <Form.Control placeholder="Apartment, studio, or floor" />
+                        </Form.Group>
+
+                        <Row className="mb-3">
+                            <Form.Group as={Col} controlId="formGridCity">
+                                <Form.Label>City</Form.Label>
+                                <Form.Control />
+                            </Form.Group>
+
+                            <Form.Group as={Col} controlId="formGridZip">
+                                <Form.Label>Zip</Form.Label>
+                                <Form.Control />
+                            </Form.Group>
+                        </Row>
+
+                        <Row className={"mb-2"}>
+                            <Button
+                                className="d-grid gap-2"
+                                type={"button"}
+                                size={"lg"}
+                                disabled={cart.length<1}
+                            >
+                                Order
+                            </Button>
+                        </Row>
+                    </Form>
+                </>
             </div>
         </div>
     )
