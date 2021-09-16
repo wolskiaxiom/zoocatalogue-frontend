@@ -34,7 +34,7 @@ const Cart = () => {
                                         <Image src={prod.image_url} alt={prod.name} fluid rounded/>
                                     </Col>
                                     <Col md={2}>
-                                        <span>{prod.name}</span>
+                                        <span>{prod.animal}</span>
                                     </Col>
                                     <Col md={2}> {prod.price} </Col>
                                     <Col md={2}>
@@ -81,17 +81,14 @@ const Cart = () => {
             </div>
 
             <div className={"filters summary"}>
-                <span className={"title"}>
-                    Subtotal ({cart.length}) items
-                </span>
-                <span style={{fontWeight: 700, fontSize: 20}}>Total: {total} PLN</span>
-                <span style={{fontWeight: 60, fontSize: 17}}>Enter Order Details</span>
+                <span style={{fontWeight: 700, fontSize: 20}}>Szacowana cena: {total} PLN</span>
+                <span style={{fontWeight: 60, fontSize: 17}}>Wprowadź dane do zapytania</span>
                 <>
                     <Form onSubmit={(event => {event.preventDefault()})}>
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email"
+                                <Form.Control type="email" placeholder="Email"
                                               onChange={(event) => {
                                                   console.log("changed val: ", event.target.value);
                                                   setEmail(event.target.value)
@@ -100,8 +97,8 @@ const Cart = () => {
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="nickname">
-                                <Form.Label>Nickname</Form.Label>
-                                <Form.Control type="text" placeholder="Nickname"
+                                <Form.Label>Imię</Form.Label>
+                                <Form.Control type="text" placeholder="Imię"
                                               onChange={(event) => {
                                                   console.log("changed val: ", event.target.value);
                                                   setNick(event.target.value);
@@ -111,8 +108,8 @@ const Cart = () => {
                         </Row>
 
                         <Form.Group className="mb-3" controlId="formGridAddress1">
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control placeholder="1234 Main St"
+                            <Form.Label>Adres</Form.Label>
+                            <Form.Control placeholder="Ulica i numer"
                                           onChange={(event) => {
                                               console.log("changed val: ", event.target.value);
                                               setAddress1(event.target.value);
@@ -121,8 +118,8 @@ const Cart = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formGridAddress2">
-                            <Form.Label>Address 2</Form.Label>
-                            <Form.Control placeholder="Apartment, studio, or floor"
+                            <Form.Label>Adres</Form.Label>
+                            <Form.Control placeholder="Dodatkowe informacje"
                                           onChange={(event) => {
                                               console.log("changed val: ", event.target.value);
                                               setAddress2(event.target.value);
@@ -132,7 +129,7 @@ const Cart = () => {
 
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridCity">
-                                <Form.Label>City</Form.Label>
+                                <Form.Label>Miasto</Form.Label>
                                 <Form.Control
                                     onChange={(event) => {
                                         console.log("changed val: ", event.target.value);
@@ -142,7 +139,7 @@ const Cart = () => {
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridZip">
-                                <Form.Label>Zip</Form.Label>
+                                <Form.Label>Kod pocztowy</Form.Label>
                                 <Form.Control
                                     onChange={(event) => {
                                         console.log("changed val: ", event.target.value);
