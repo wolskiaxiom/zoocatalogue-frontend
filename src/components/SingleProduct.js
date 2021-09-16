@@ -17,10 +17,10 @@ const SingleProduct = ( {prod} ) => {
                     <Card.Title>{prod.animal}</Card.Title>
                     <Card.Subtitle style={{paddingBottom: 10}}>
                         <span> {prod.price.toString().split(".")[0]} PLN </span>
-                        {prod.fastDelivery ? (
-                            <div> Fast Delivery </div>
+                        {prod.fast_delivery === 'true' ? (
+                            <div> Natychmiastowa dostępność </div>
                         ) : (
-                            <div> 4 days delivery </div>
+                            <div> Zwiększony czas oczekiwania </div>
                         )}
                         <Rating rating = {prod.ratings}/>
                     </Card.Subtitle>
@@ -35,7 +35,7 @@ const SingleProduct = ( {prod} ) => {
                                     })
                                 }}
                                 variant={"danger"}>
-                                Remove from cart
+                                Usuń z koszyka
                             </Button>
                         ) : (
                             <Button
@@ -45,8 +45,8 @@ const SingleProduct = ( {prod} ) => {
                                         payload: prod,
                                     })
                                 }}
-                                disabled={prod.in_stock<0}>
-                                {prod.in_stock<0 ? "Out of Stock" : "Add to cart"}
+                                disabled={prod.in_stock<1}>
+                                {prod.in_stock<1 ? "Obecnie brak na stanie" : "Dodaj do koszyka"}
                             </Button>
                         )
                     }

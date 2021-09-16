@@ -15,7 +15,7 @@ const Header = () => {
         <Navbar bg="dark" variant="dark" style={{height: 80}}>
             <Container>
                 <Navbar.Brand>
-                    <Link to={"/"}>Shopping Cart</Link>
+                    <Link to={"/"}>Oferta katalogowa</Link>
                 </Navbar.Brand>
                 <Nav>
                     <Dropdown alignRight>
@@ -60,7 +60,7 @@ const Header = () => {
                                     </Link>
                                 </>
                             ) : (
-                                <span style={{padding:10}}> You didn't choose any animals yet! </span>
+                                <span style={{padding:10}}> Żaden zwierzak jeszcze nie jest przygarnięty... </span>
                             )}
                         </Dropdown.Menu>
                     </Dropdown>

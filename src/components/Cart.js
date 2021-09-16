@@ -189,7 +189,7 @@ const Cart = () => {
                                     postOrders();
                                 }}
                             >
-                                Order
+                                Wyślij zapytanie o dostępność
                             </Button>
                         </Row>
                     </Form>
