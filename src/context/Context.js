@@ -25,7 +25,7 @@ const Context = ({children}) => {
         };
 
         getAnimals();
-    }, []);
+    }, [state.cart]);
 
     return (
         <Cart.Provider value={{state, dispatch}}>

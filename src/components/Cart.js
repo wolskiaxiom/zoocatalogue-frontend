@@ -179,9 +179,10 @@ const Cart = () => {
 
                                     });
                                         if (response.status === 200) {
-                                            console.log('great success!', response.statusText)
-                                        } else {
-                                            console.log('sth went wrong.', response.statusText)
+                                            dispatch({
+                                                type: "CLEAN_CART",
+                                                payload: {},
+                                            })
                                         }
                                     };
 
