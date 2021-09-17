@@ -16,7 +16,6 @@ const Cart = () => {
     const [city, setCity] = useState("")
     const [zipcode, setZipcode] = useState("")
     const [total, setTotal] = useState()
-    // const [comment, setComment] = useState("")
 
     useEffect(() => {
         setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0))
@@ -90,7 +89,6 @@ const Cart = () => {
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" placeholder="Email"
                                               onChange={(event) => {
-                                                  console.log("changed val: ", event.target.value);
                                                   setEmail(event.target.value)
                                               }}
                                 />
@@ -100,7 +98,6 @@ const Cart = () => {
                                 <Form.Label>Imię</Form.Label>
                                 <Form.Control type="text" placeholder="Imię"
                                               onChange={(event) => {
-                                                  console.log("changed val: ", event.target.value);
                                                   setNick(event.target.value);
                                               }}
                                 />
@@ -111,7 +108,6 @@ const Cart = () => {
                             <Form.Label>Adres</Form.Label>
                             <Form.Control placeholder="Ulica i numer"
                                           onChange={(event) => {
-                                              console.log("changed val: ", event.target.value);
                                               setAddress1(event.target.value);
                                           }}
                             />
@@ -121,7 +117,6 @@ const Cart = () => {
                             <Form.Label>Adres</Form.Label>
                             <Form.Control placeholder="Dodatkowe informacje"
                                           onChange={(event) => {
-                                              console.log("changed val: ", event.target.value);
                                               setAddress2(event.target.value);
                                           }}
                             />
@@ -132,7 +127,6 @@ const Cart = () => {
                                 <Form.Label>Miasto</Form.Label>
                                 <Form.Control
                                     onChange={(event) => {
-                                        console.log("changed val: ", event.target.value);
                                         setCity(event.target.value);
                                     }}
                                 />
@@ -142,7 +136,6 @@ const Cart = () => {
                                 <Form.Label>Kod pocztowy</Form.Label>
                                 <Form.Control
                                     onChange={(event) => {
-                                        console.log("changed val: ", event.target.value);
                                         setZipcode(event.target.value);
                                     }}
                                 />
@@ -154,7 +147,7 @@ const Cart = () => {
                                 className="d-grid gap-2"
                                 type={"submit"}
                                 size={"lg"}
-                                // disabled={cart.length < 1}
+                                disabled={cart.length < 1}
                                 onClick={() => {
                                     const postOrders = async () => {
                                         let response = await axios.post('http://localhost:3333/order', {
